@@ -1,0 +1,196 @@
+{
+	"DOTS: Create Full File ComponentSystem": {
+		"prefix": ":makesys",
+		"body": [
+			"using UnityEngine;",
+			"using Unity.Entities;",
+			"",
+			"namespace ${1:MyPackage}.Systems",
+			"{",
+			"\tpublic class ${2:MySystem} : ComponentSystem",
+			"\t{",
+			"\t\tprivate EntityQuery group;",
+			"",
+			"\t\tprotected override void OnCreate()",
+			"\t\t{",
+			"\t\t\tthis.group = GetEntityQuery(",
+			"\t\t\t\tComponentType.ReadWrite<Transform>()",
+			"\t\t\t);",
+			"",
+			"\t\t\tthis.RequireForUpdate(this.group);",
+			"\t\t}",
+			"",
+			"\t\tprotected override void OnUpdate()",
+			"\t\t{",
+			"\t\t}",
+			"\t}",
+			"}"
+		],
+		"description": "Create a full ComponentSystem"
+	},
+
+	"DOTS: Create Simple Query": {
+		"prefix": ":querySimple",
+		"body": [
+			"this.${1:group} = GetEntityQuery(",
+			"\tComponentType.ReadWrite<Transform>()",
+			");"
+		],
+		"description": "Creates a Simple Query"
+	},
+
+	"DOTS: Create Complex Query": {
+		"prefix": ":queryComplex",
+		"body": [
+			"this.${1:group} = GetEntityQuery(new EntityQueryDesc",
+			"{",
+			"\tAll = new []",
+			"\t{",
+			"\t\tComponentType.ReadWrite<MyComponent>(),",
+			"\t},",
+			"\tNone = new []",
+			"\t{",
+			"\t\tComponentType.ReadOnly<SubtractiveComponent>()",
+			"\t},",
+			"});"
+		],
+		"description": "Creates a Complex Query"
+	},
+
+	"DOTS: Add Group Query": {
+		"prefix": ":group",
+		"body": [
+			"private EntityQuery ${1:group};"
+		],
+		"description": "Add Group Query"
+	},
+
+	"DOTS: Add Component Read": {
+		"prefix": ":compRead",
+		"body": [
+			"ComponentType.ReadOnly<${1:MyComponent}>()"
+		],
+		"description": "Add Component Read"
+	},
+
+	"DOTS: Add Component Write": {
+		"prefix": ":compWrite",
+		"body": [
+			"ComponentType.ReadWrite<${1:MyComponent}>()"
+		],
+		"description": "Add Component Read"
+	},
+
+	"DOTS: Require For Update": {
+		"prefix": ":require",
+		"body": [
+			"this.RequireForUpdate(this.${1:group});"
+		],
+		"description": "Require For Update"
+	},
+
+	"DOTS: Create Type Definition": {
+		"prefix": ":newType",
+		"body": [
+			"private ArchetypeChunkComponentType<${1:MyComponent}> ${2:myType};"
+		],
+		"description": "Create Type Definition"
+	},
+
+	"DOTS: Create Entity Type Definition": {
+		"prefix": ":newEntityType",
+		"body": [
+			"private ArchetypeChunkEntityType ${1:entityType};"
+		],
+		"description": "Create Entity Type Definition"
+	},
+
+	"DOTS: Get Type": {
+		"prefix": ":getType",
+		"body": [
+			"this.${1:myType} = this.GetArchetypeChunkComponentType<${2:MyComponent}>();"
+		],
+		"description": "Get Archetype Chunk Component Type"
+	},
+
+	"DOTS: Get Entity Type": {
+		"prefix": ":getEntityType",
+		"body": [
+			"this.${1:entityType} = this.GetArchetypeChunkEntityType();"
+		],
+		"description": "Get Archetype Chunk Entity Type"
+	},
+
+	"DOTS: Create Chunk Iteration": {
+		"prefix": ":chunkIteration",
+		"body": [
+			"NativeArray<ArchetypeChunk> chunks = this.${1:group}.CreateArchetypeChunkArray(Allocator.TempJob);",
+			"for (int i = 0; i < chunks.Length; ++i)",
+			"{",
+			"\tthis.ProcessChunk(chunks[i]);",
+			"}",
+			"",
+			"chunks.Dispose();"
+		],
+		"description": "Create Chunk Iteration"
+	},
+
+	"DOTS: Chunk Get Native Array": {
+		"prefix": ":chGetNative",
+		"body": [
+			"var ${1:typeArray} = chunk.GetNativeArray(this.${2:myType});"
+		],
+		"description": "Chunk Get Native Array"
+	},
+
+	"DOTS: Chunk Get Component Object": {
+		"prefix": ":chGetObject",
+		"body": [
+			"var ${1:objComponent} = chunk.GetComponentObjects(this.${2:myType}, this.EntityManager);"
+		],
+		"description": "Chunk Get Component Object"
+	},
+
+	"DOTS: Chunk Get Shared Component": {
+		"prefix": ":chGetShared",
+		"body": [
+			"var ${1:shared} = chunk.GetSharedComponentData(this.${2:myType}, this.EntityManager);"
+		],
+		"description": "Chunk Get Shared Component"
+	},
+
+	"DOTS: ForEach": {
+		"prefix": ":forEach",
+		"body": [
+			"Entities.With(this.${1:group}).ForEach((${2:MyComponent} data) =>",
+			"{",
+			"\t",
+			"});"
+		],
+		"description": "ForEach Iteration"
+	},
+
+	"DOTS: ForEach With Entity": {
+		"prefix": ":forEachEntity",
+		"body": [
+			"Entities.With(this.${1:group}).ForEach((Entity entity, ${2:MyComponent} data) =>",
+			"{",
+			"\t",
+			"});"
+		],
+		"description": "ForEach Iteration With Entity"
+	},
+
+	"DOTS: Process Chunk Function": {
+		"prefix": ":chunkProcess",
+		"body": [
+			"private void ProcessChunk(ArchetypeChunk chunk)",
+			"{",
+			"\tfor (int ci = 0; ci < chunk.Count; ci++)",
+			"\t{",
+			"\t}",
+			"}"
+		],
+		"description": "Process Chunk Function"
+	}
+}

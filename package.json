@@ -1,0 +1,20 @@
+{
+    "name": "unity-dots-snippets",
+    "displayName": "unity-dots-snippets",
+    "description": "Snippets for Unity DOTS",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.39.0"
+    },
+    "categories": [
+        "Snippets"
+    ],
+    "contributes": {
+        "snippets": [
+            {
+                "language": "csharp",
+                "path": "./snippets/snippets.json"
+            }
+        ]
+    }
+}
