@@ -11,6 +11,9 @@ PR are open to make this even better!
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/diegosarmentero/vscode-unity-dots/issues)
 
 ![Gif](https://media.giphy.com/media/JSprcoMCQqnOawbyqF/giphy.gif)
+![Gif](https://media.giphy.com/media/UvPqwMZfshE3iYEvIE/giphy.gif)
+![Gif](https://media.giphy.com/media/JSXiMtuNDmhinRjR3l/giphy.gif)
+![Gif](https://media.giphy.com/media/RJaeNe6tszUAZw1pGE/giphy.gif)
 
 ## Shortcuts / Commands
 
