@@ -1,65 +1,48 @@
-# unity-dots-snippets README
+# Unity DOTS Snippets
 
-This is the README for your extension "unity-dots-snippets". After writing up a brief description, we recommend including the following sections.
+Speed up development with Unity DOTS by having quick access to some of the most common operations and code structures necessary when working with component systems.
 
-## Features
+This is usually not an issue but it can be tedious, repetitive and sometimes hard to remember the exact API or calls.
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+This extension will solve the issue for you with a simple `:[command]` + `TAB`/`ENTER` and your up and running.
 
-For example if there is an image subfolder under your extension project workspace:
+PR are open to make this even better!
 
-\!\[feature X\]\(images/feature-x.png\)
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/diegosarmentero/vscode-unity-dots/issues)
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+## Shortcuts / Commands
 
-## Requirements
-
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
-
-## Extension Settings
-
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
-
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: enable/disable this extension
-* `myExtension.thing`: set to `blah` to do something
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+| Command    | Help Text                                                                             |
+| ---------- | ------------------------------------------------------------------------------------- |
+| :makesys      | Creates Full File ComponentSystem  												 |
+| :querySimple      | Creates a Simple Query 														 |
+| :queryComplex     | Creates a more Complex Query with All and None filters                		 |
+| :group      | Add Group Query    																	 |
+| :compRead     | Add Component ReadOnly                											 |
+| :compWrite     | Add Component ReadWrite                                                    		 |
+| :require    | Require For Update condition for OnCreate                                            |
+| :newType    | Creates Type Definition                                                    		     |
+| :newEntityType  | Creates Entity Type Definition                                                   |
+| :getType | Get Archetype Chunk Component Type                                                      |
+| :getEntityType   | Get Archetype Chunk Entity Type                                         		 |
+| :chunkIteration    | Creates Chunk Iteration structure                                             |
+| :chGetNative       | Chunk Get Native Array                                          		         |
+| :chGetObject       | Chunk Get Component Object                                                    |
+| :chGetShared    | Chunk Get Shared Component                                  			         |
+| :forEach    | ForEach Iteration with With Condition                                        		 |
+| :forEachEntity    | ForEach Iteration with With Condition and Entity Component                     |
+| :chunkProcess    | Default Process Chunk Function                                   			     |
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### [0.0.1]
 
-### 1.0.0
+Initial release of Unity DOTS Snippets
 
-Initial release of ...
+## Known Issues
 
-### 1.0.1
+No known issues so far.
 
-Fixed issue #.
+## Credits
 
-### 1.1.0
-
-Added features X, Y, and Z.
-
------------------------------------------------------------------------------------------------------------
-
-## Working with Markdown
-
-**Note:** You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
-* Toggle preview (`Shift+CMD+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
-* Press `Ctrl+Space` (Windows, Linux) or `Cmd+Space` (macOS) to see a list of Markdown snippets
-
-### For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
+-   [@diegosarmentero](https://github.com/diegosarmentero)

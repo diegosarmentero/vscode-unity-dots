@@ -1,11 +1,35 @@
 {
     "name": "unity-dots-snippets",
-    "displayName": "unity-dots-snippets",
+    "displayName": "Unity DOTS Snippets",
     "description": "Snippets for Unity DOTS",
     "version": "0.0.1",
+    "publisher": "diegosarmentero",
+    "license": "SEE LICENSE IN LICENSE.md",
+    "homepage": "https://github.com/diegosarmentero/vscode-unity-dots/blob/master/README.md",
+    "keywords":
+    [
+        "unity 3d", "c#", "dots", "ecs", "unity dots", "unity ecs",
+        "unity", "unity3d", "unity 3d",
+        "c#", "c sharp", "csharp", "c-sharp", "cs", ".cs", "*.cs",
+        "gamedev", "code", "script",
+        "unity code", "unity script"
+    ],
+    "author":
+    {
+        "name": "Diego Sarmentero",
+        "url": "http://mindechoes.com"
+    },
+    "bugs": {
+		"url": "https://github.com/diegosarmentero/vscode-unity-dots/issues"
+	},
+    "repository": {
+		"type": "git",
+		"url": "https://github.com/diegosarmentero/vscode-unity-dots"
+	},
     "engines": {
         "vscode": "^1.39.0"
     },
+    "icon": "icon.png",
     "categories": [
         "Snippets"
     ],
