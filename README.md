@@ -4,7 +4,7 @@ Speed up development with Unity DOTS by having quick access to some of the most 
 
 This is usually not an issue but it can be tedious, repetitive and sometimes hard to remember the exact API or calls.
 
-This extension will solve the issue for you with a simple `:[command]` + `TAB`/`ENTER` and your up and running.
+This extension will solve the issue for you with a simple `:[command]` + `TAB`/`ENTER` and you're up and running.
 
 PR are open to make this even better!
 
