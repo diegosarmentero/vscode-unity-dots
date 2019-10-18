@@ -1,5 +1,5 @@
 {
-	"DOTS: Create Full File ComponentSystem": {
+	"DOTS: Creates Full File ComponentSystem": {
 		"prefix": ":makesys",
 		"body": [
 			"using UnityEngine;",
@@ -26,7 +26,7 @@
 			"\t}",
 			"}"
 		],
-		"description": "Create a full ComponentSystem"
+		"description": "Creates a full ComponentSystem"
 	},
 
 	"DOTS: Create Simple Query": {
@@ -78,7 +78,7 @@
 		"body": [
 			"ComponentType.ReadWrite<${1:MyComponent}>()"
 		],
-		"description": "Add Component Read"
+		"description": "Add Component Write"
 	},
 
 	"DOTS: Require For Update": {
@@ -94,7 +94,7 @@
 		"body": [
 			"private ArchetypeChunkComponentType<${1:MyComponent}> ${2:myType};"
 		],
-		"description": "Create Type Definition"
+		"description": "Creates Type Definition"
 	},
 
 	"DOTS: Create Entity Type Definition": {
@@ -102,7 +102,7 @@
 		"body": [
 			"private ArchetypeChunkEntityType ${1:entityType};"
 		],
-		"description": "Create Entity Type Definition"
+		"description": "Creates Entity Type Definition"
 	},
 
 	"DOTS: Get Type": {
@@ -132,7 +132,7 @@
 			"",
 			"chunks.Dispose();"
 		],
-		"description": "Create Chunk Iteration"
+		"description": "Creates Chunk Iteration"
 	},
 
 	"DOTS: Chunk Get Native Array": {
