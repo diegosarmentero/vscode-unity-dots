@@ -10,7 +10,7 @@ PR are open to make this even better!
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)](https://github.com/diegosarmentero/vscode-unity-dots/issues)
 
-![Imgur](https://i.imgur.com/bvuS1Zh.mp4)
+![Gif](https://media.giphy.com/media/JSprcoMCQqnOawbyqF/giphy.gif)
 
 ## Shortcuts / Commands
 
