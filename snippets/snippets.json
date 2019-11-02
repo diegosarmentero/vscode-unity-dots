@@ -33,7 +33,7 @@
 		"prefix": ":querySimple",
 		"body": [
 			"this.${1:group} = GetEntityQuery(",
-			"\tComponentType.ReadWrite<Transform>()",
+			"\tComponentType.ReadOnly<Transform>()",
 			");"
 		],
 		"description": "Creates a Simple Query"
@@ -46,7 +46,7 @@
 			"{",
 			"\tAll = new []",
 			"\t{",
-			"\t\tComponentType.ReadWrite<MyComponent>(),",
+			"\t\tComponentType.ReadOnly<MyComponent>(),",
 			"\t},",
 			"\tNone = new []",
 			"\t{",
@@ -164,7 +164,7 @@
 		"body": [
 			"Entities.With(this.${1:group}).ForEach((${2:MyComponent} data) =>",
 			"{",
-			"\t",
+			"\t${3}",
 			"});"
 		],
 		"description": "ForEach Iteration"
@@ -175,7 +175,7 @@
 		"body": [
 			"Entities.With(this.${1:group}).ForEach((Entity entity, ${2:MyComponent} data) =>",
 			"{",
-			"\t",
+			"\t${3}",
 			"});"
 		],
 		"description": "ForEach Iteration With Entity"
@@ -188,9 +188,188 @@
 			"{",
 			"\tfor (int ci = 0; ci < chunk.Count; ci++)",
 			"\t{",
+			"\t\t${1}",
 			"\t}",
 			"}"
 		],
 		"description": "Process Chunk Function"
+	},
+
+	"DOTS: Jobs Command Buffer": {
+		"prefix": ":newCmdBuffer",
+		"body": [
+			"private BeginInitializationEntityCommandBufferSystem ${1:entityCommandBufferSystem};"
+		],
+		"description": "Jobs Command Buffer"
+	},
+
+	"DOTS: Jobs Get Command Buffer": {
+		"prefix": ":getCmdBuffer",
+		"body": [
+			"this.${1:entityCommandBufferSystem} = World.GetOrCreateSystem<BeginInitializationEntityCommandBufferSystem>();"
+		],
+		"description": "Jobs Get Command Buffer"
+	},
+
+	"DOTS: Jobs Declare Command Buffer": {
+		"prefix": ":declareCmdBuffer",
+		"body": [
+			"public EntityCommandBuffer.Concurrent ${1:commandBuffer}; // Remove [BurstCompile] from this Job"
+		],
+		"description": "Jobs Declare Command Buffer"
+	},
+
+	"DOTS: Jobs Use Command Buffer": {
+		"prefix": ":useCmdBuffer",
+		"body": [
+			"${1:entityCommandBufferSystem}.CreateCommandBuffer().ToConcurrent()"
+		],
+		"description": "Jobs Use Command Buffer"
+	},
+
+	"DOTS: DeclareReferencedPrefabs function": {
+		"prefix": ":refPrefabs",
+		"body": [
+			"// Requires interface: IDeclareReferencedPrefabs",
+			"public void DeclareReferencedPrefabs(List<GameObject> gameObjects)",
+			"{",
+			"\tgameObjects.Add(${1:prefab});",
+			"}"
+		],
+		"description": "DeclareReferencedPrefabs function"
+	},
+
+	"DOTS: Deallocate System Job": {
+		"prefix": ":deallocateJob",
+		"body": [
+			"[BurstCompile]",
+			"struct DeallocateSystemJob : IJob",
+			"{",
+			"\t[DeallocateOnJobCompletion][ReadOnly] public NativeArray<int> ${1:array};",
+			"",
+			"\tpublic void Execute() { }",
+			"}"
+		],
+		"description": "Deallocate System Job Template"
+	},
+
+	"DOTS: IJob": {
+		"prefix": ":job",
+		"body": [
+			"[BurstCompile]",
+			"struct ${1:Name}SystemJob : IJob",
+			"{",
+			"\tpublic void Execute()",
+			"\t{",
+			"\t\t${2}",
+			"\t}",
+			"}"
+		],
+		"description": "Creates IJob struct"
+	},
+
+	"DOTS: IJobChunk": {
+		"prefix": ":jobChunk",
+		"body": [
+			"[BurstCompile]",
+			"struct ${1:Name}SystemJob : IJobChunk",
+			"{",
+			"\tpublic void Execute(ArchetypeChunk chunk, int chunkIndex, int firstEntityIndex)",
+			"\t{",
+			"\t\t${2}",
+			"\t}",
+			"}"
+		],
+		"description": "Creates IJobChunk struct"
+	},
+
+	"DOTS: IJobForEach": {
+		"prefix": ":jobFor",
+		"body": [
+			"[BurstCompile]",
+			"struct ${1:Name}SystemJob : IJobForEach<${2:Translation}>",
+			"{",
+			"\tpublic void Execute([ReadOnly] ref ${3:Translation} ${4:translation})",
+			"\t{",
+			"\t\t${5}",
+			"\t}",
+			"}"
+		],
+		"description": "Creates IJobForEach struct"
+	},
+
+	"DOTS: IJobForEachWithEntity": {
+		"prefix": ":jobForEntity",
+		"body": [
+			"[BurstCompile]",
+			"struct ${1:Name}SystemJob : IJobForEachWithEntity<${2:Translation}>",
+			"{",
+			"\tpublic void Execute(Entity entity, int index, [ReadOnly] ref ${3:Translation} ${4:translation})",
+			"\t{",
+			"\t\t${5}",
+			"\t}",
+			"}"
+		],
+		"description": "Creates IJobForEachWithEntity struct"
+	},
+
+	"DOTS: IJobParallelFor": {
+		"prefix": ":jobParallel",
+		"body": [
+			"[BurstCompile]",
+			"struct ${1:Name}SystemJob : IJobParallelFor",
+			"{",
+			"\tpublic void Execute(int index)",
+			"\t{",
+			"\t\t${2}",
+			"\t}",
+			"}"
+		],
+		"description": "Creates IJobParallelFor struct"
+	},
+
+	"DOTS: IJobParallelForBatch": {
+		"prefix": ":jobParallelBatch",
+		"body": [
+			"[BurstCompile]",
+			"struct ${1:Name}SystemJob : IJobParallelForBatch",
+			"{",
+			"\tpublic void Execute(int startIndex, int count)",
+			"\t{",
+			"\t\t${2}",
+			"\t}",
+			"}"
+		],
+		"description": "Creates IJobParallelForBatch struct"
+	},
+
+	"DOTS: IJobParallelForDefer": {
+		"prefix": ":jobParallelDefer",
+		"body": [
+			"[BurstCompile]",
+			"struct ${1:Name}SystemJob : IJobParallelForDefer",
+			"{",
+			"\tpublic void Execute(int index)",
+			"\t{",
+			"\t\t${2}",
+			"\t}",
+			"}"
+		],
+		"description": "Creates IJobParallelForDefer struct"
+	},
+
+	"DOTS: IJobParallelForFilter": {
+		"prefix": ":jobParallelFilter",
+		"body": [
+			"[BurstCompile]",
+			"struct ${1:Name}SystemJob : IJobParallelForFilter",
+			"{",
+			"\tpublic void Execute(int index)",
+			"\t{",
+			"\t\t${2}",
+			"\t}",
+			"}"
+		],
+		"description": "Creates IJobParallelForFilter struct"
 	}
 }

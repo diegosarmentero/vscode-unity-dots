@@ -19,26 +19,58 @@ PR are open to make this even better!
 
 | Command    | Help Text                                                                             |
 | ---------- | ------------------------------------------------------------------------------------- |
-| :makesys      | Creates Full File ComponentSystem  												 |
-| :querySimple      | Creates a Simple Query 														 |
-| :queryComplex     | Creates a more Complex Query with All and None filters                		 |
-| :group      | Add Group Query    																	 |
-| :compRead     | Add Component ReadOnly                											 |
-| :compWrite     | Add Component ReadWrite                                                    		 |
-| :require    | Require For Update condition for OnCreate                                            |
-| :newType    | Creates Type Definition                                                    		     |
-| :newEntityType  | Creates Entity Type Definition                                                   |
-| :getType | Get Archetype Chunk Component Type                                                      |
-| :getEntityType   | Get Archetype Chunk Entity Type                                         		 |
-| :chunkIteration    | Creates Chunk Iteration structure                                             |
-| :chGetNative       | Chunk Get Native Array                                          		         |
-| :chGetObject       | Chunk Get Component Object                                                    |
-| :chGetShared    | Chunk Get Shared Component                                  			         |
-| :forEach    | ForEach Iteration with With Condition                                        		 |
-| :forEachEntity    | ForEach Iteration with With Condition and Entity Component                     |
-| :chunkProcess    | Default Process Chunk Function                                   			     |
+| :makesys      		| Creates Full File ComponentSystem  												|
+| :querySimple      	| Creates a Simple Query 															|
+| :queryComplex     	| Creates a more Complex Query with All and None filters                			|
+| :group      			| Add Group Query    																|
+| :compRead     		| Add Component ReadOnly                											|
+| :compWrite     		| Add Component ReadWrite                                                   		|
+| :require    			| Require For Update condition for OnCreate                                  		|
+| :newType    			| Creates Type Definition                                                    		|
+| :newEntityType  		| Creates Entity Type Definition                                                   	|
+| :getType 				| Get Archetype Chunk Component Type                                         		|
+| :getEntityType   		| Get Archetype Chunk Entity Type                                         		 	|
+| :chunkIteration    	| Creates Chunk Iteration structure                                             	|
+| :chGetNative       	| Chunk Get Native Array                                          		         	|
+| :chGetObject       	| Chunk Get Component Object                                                    	|
+| :chGetShared   		| Chunk Get Shared Component                                  			        	|
+| :forEach    			| ForEach Iteration with With Condition                                        		|
+| :forEachEntity    	| ForEach Iteration with With Condition and Entity Component                     	|
+| :chunkProcess    		| Default Process Chunk Function                                   			     	|
+| :newCmdBuffer    		| Jobs Command Buffer			                                   			     	|
+| :getCmdBuffer    		| Jobs Get Command Buffer		                                   			     	|
+| :declareCmdBuffer    	| Jobs Declare Command Buffer		                              					|
+| :useCmdBuffer    		| Jobs Use Command Buffer			                              					|
+| :refPrefabs    		| DeclareReferencedPrefabs function	                              					|
+| :deallocateJob    	| Deallocate System Job Template	                              					|
+| :job    				| Creates IJob struct				                              					|
+| :jobChunk				| Creates IJobChunk struct			                              					|
+| :jobFor				| Creates IJobForEach struct		                              					|
+| :jobForEntity			| Creates IJobForEachWithEntity struct                             					|
+| :jobParallel			| Creates IJobParallelFor struct	                             					|
+| :jobParallelBatch		| Creates IJobParallelForBatch struct                             					|
+| :jobParallelDefer		| Creates IJobParallelForDefer struct                             					|
+| :jobParallelFilter	| Creates IJobParallelForFilter struct                             					|
 
 ## Release Notes
+
+### [0.0.2]
+
+Introduces:
+- :newCmdBuffer
+- :getCmdBuffer
+- :declareCmdBuffer
+- :useCmdBuffer
+- :refPrefabs
+- :deallocateJob
+- :job
+- :jobChunk
+- :jobFor
+- :jobForEntity
+- :jobParallel
+- :jobParallelBatch
+- :jobParallelDefer
+- :jobParallelFilter
 
 ### [0.0.1]
 

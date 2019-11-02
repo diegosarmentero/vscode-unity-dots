@@ -2,7 +2,7 @@
     "name": "unity-dots-snippets",
     "displayName": "Unity DOTS Snippets",
     "description": "Snippets for Unity DOTS",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "publisher": "diegosarmentero",
     "license": "SEE LICENSE IN LICENSE.md",
     "homepage": "https://github.com/diegosarmentero/vscode-unity-dots/blob/master/README.md",
